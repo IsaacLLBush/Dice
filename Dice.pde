@@ -1,6 +1,3 @@
-  int rows;
-  int cols;
-  Die bob;
 void setup()  
 {
   size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight)); 
@@ -17,10 +14,10 @@ void draw()
   cols=(int)(1+20*Math.random());
   for(int i = 0; i<cols; i++){
     for(int j = 0; j<rows; j++){
-      if(floor(0.4*(0.9*height/rows))<=floor(0.4*(width/cols))){
-        bob=new Die((i+1)*width/(cols+1), floor(((j+1)*height/(rows+1))*(0.8)), floor((0.4*((0.9*height)/rows))), 0);
+      if(floor(0.2*(0.9*height/rows))<=floor(0.2*(width/cols))){
+        bob=new Die((i+1)*width/(cols+1), floor(((j+1)*height/(rows+1))*(0.8)), floor((0.45*((0.9*height)/rows))), 0);
       } else{
-        bob=new Die((i+1)*width/(cols+1), floor(((j+1)*height/(rows+1))*(0.8)), floor((0.4*(width/cols))), 0);
+        bob=new Die((i+1)*width/(cols+1), floor(((j+1)*height/(rows+1))*(0.8)), floor((0.45*(width/cols))), 0);
       }
       bob.roll();
       bob.show();
@@ -29,7 +26,7 @@ void draw()
   }
   textSize(height/25);
   fill(255,255,255);
-  text("Total: "+ rows*cols+ "dice, adding up to " + total+"\n Average: "+(float)total/(rows*cols), width/2, (int)(0.95*height));
+  text("Total: "+ rows*cols+ " dice, adding up to " + total+"\n Average: "+(float)total/(rows*cols), width/2, (int)(0.95*height));
 }
 class Die // The Balloon object!
 {
