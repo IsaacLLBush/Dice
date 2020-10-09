@@ -3,7 +3,7 @@ int cols;
 Die bob;
 void setup()  
 {
-  size(1000,1000); //size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight));
+  size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight));
   noLoop();
   textAlign(CENTER, BOTTOM);
   rectMode(RADIUS);
