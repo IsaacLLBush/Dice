@@ -1,10 +1,9 @@
-
   int rows;
   int cols;
   Die bob;
 void setup()  
 {
-  size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight));
+  size(615, 340);
   noLoop();
   textAlign(CENTER, BOTTOM);
   rows=floor(height*0.8/100);
