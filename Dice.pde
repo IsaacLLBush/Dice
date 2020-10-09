@@ -1,10 +1,15 @@
+int rows;
+int cols;
+Die bob;
 void setup()  
 {
-  size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight)); 
+  size(1000,1000); //size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight));
   noLoop();
   textAlign(CENTER, BOTTOM);
+  rectMode(RADIUS);
   rows=(int)(1+20*Math.random());
   cols=(int)(1+20*Math.random());
+  strokeWeight(0);
 }
 int total=0;
 void draw()  
@@ -12,7 +17,7 @@ void draw()
   background(0,0,0);
   for(int i = 0; i<cols; i++){
     for(int j = 0; j<rows; j++){
-      if(floor(0.2*(0.9*height/rows))<=floor(0.2*(width/cols))){
+      if(floor(0.9*height/rows)<=floor(width/cols)){
         bob=new Die((i+1)*width/(cols+1), floor(((j+1)*height/(rows+1))*(0.8)), floor((0.45*((0.9*height)/rows))), 0);
       } else{
         bob=new Die((i+1)*width/(cols+1), floor(((j+1)*height/(rows+1))*(0.8)), floor((0.45*(width/cols))), 0);
@@ -28,25 +33,25 @@ void draw()
 }
 class Die // The Balloon object!
 {
-  int myX, myY, mySize, dotSize, myNum;     // Delare member variables
-  Die(int x_,int y_, int size_, int num)   // The Balloon Constructor Method!
-  {                            // Initialize Member variables below
+  int myX, myY, mySize, dotSize, myNum;
+  Die(int x_,int y_, int size_, int num)
+  {
     mySize = size_;
     myX = x_;
     myY = y_;
     dotSize = mySize/5;
     myNum=num;
   }
-                            // Inflate method 
+
   void roll()
   {
     myNum = (int)(6*Math.random())+1;
   }
-                            // Show method 
+
   void show()
   {
     fill(255, 255, 255);
-    rect(myX-mySize, myY-mySize, 2*mySize, 2*mySize,mySize/5);
+    rect(myX, myY, mySize, mySize,mySize/2);
     
     //dot in middle
     fill(0,0,0);
