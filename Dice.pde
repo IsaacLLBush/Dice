@@ -29,7 +29,7 @@ void draw()
   }
   textSize(height/25);
   fill(255,255,255);
-  text("Total: "+ rows*cols+ "dice, adding up to " total+"\n Average: "+(float)total/(rows*cols), width/2, (int)(0.95*height));
+  text("Total: "+ rows*cols+ "dice, adding up to " + total+"\n Average: "+(float)total/(rows*cols), width/2, (int)(0.95*height));
 }
 class Die // The Balloon object!
 {
