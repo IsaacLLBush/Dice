@@ -1,5 +1,7 @@
 int rows;
 int cols;
+int total;
+int availHeight;
 Die bob;
 void setup()  
 {
@@ -7,20 +9,21 @@ void setup()
   noLoop();
   textAlign(CENTER, BOTTOM);
   rectMode(RADIUS);
-  rows=(int)(1+20*Math.random());
-  cols=(int)(1+20*Math.random());
-  strokeWeight(0);
+  rows=1;
+  cols=1;
+  total=0;
+  availHeight=(int)(0.85*height);
 }
-int total=0;
 void draw()  
 {
+  total=0;
   background(0,0,0);
   for(int i = 0; i<cols; i++){
     for(int j = 0; j<rows; j++){
-      if(floor(0.9*height/rows)<=floor(width/cols)){
-        bob=new Die((i+1)*width/(cols+1), floor(((j+1)*height/(rows+1))*(0.8)), floor((0.45*((0.9*height)/rows))), 0);
+      if(floor(availHeight/(rows+1))<=floor(width/(cols+1))){
+        bob=new Die((i+1)*width/(cols+1), (((j+1)*availHeight)/(rows+1)), (int)((0.45*((0.85*height)/(rows+1)))), 0);
       } else{
-        bob=new Die((i+1)*width/(cols+1), floor(((j+1)*height/(rows+1))*(0.8)), floor((0.45*(width/cols))), 0);
+        bob=new Die((i+1)*width/(cols+1), (((j+1)*availHeight)/(rows+1)), (int)((0.45*(width/(cols+1)))), 0);
       }
       bob.roll();
       bob.show();
@@ -29,7 +32,7 @@ void draw()
   }
   textSize(height/25);
   fill(255,255,255);
-  text("Total: "+ rows*cols+ " dice, adding up to " + total+"\n Average: "+(float)total/(rows*cols), width/2, (int)(0.95*height));
+  text(rows+"x"+cols+ " dice, adding up to " + total+"\n Average: "+(float)total/(rows*cols), width/2, (int)(0.95*height));
 }
 class Die // The Balloon object!
 {
@@ -51,7 +54,7 @@ class Die // The Balloon object!
   void show()
   {
     fill(255, 255, 255);
-    rect(myX, myY, mySize, mySize,mySize/2);
+    rect(myX, myY, mySize, mySize,mySize);
     
     //dot in middle
     fill(0,0,0);
@@ -72,13 +75,23 @@ class Die // The Balloon object!
 }
 
 void mousePressed(){
-  total=0;
   redraw();
 }
 void keyPressed() {
-  if(key==32) {
-    rows=(int)(1+20*Math.random());
-    cols=(int)(1+20*Math.random());
+  if(keyCode==DOWN){
+    rows+=1;
+    redraw();
+  }
+  if(keyCode==UP&&rows>1){
+    rows-=1;
+    redraw();
+  }
+  if(keyCode==RIGHT){
+    cols+=1;
+    redraw();
+  }
+  if(keyCode==LEFT&&cols>1){
+    cols-=1;
     redraw();
   }
 }
