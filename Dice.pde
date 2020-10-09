@@ -3,16 +3,18 @@
   Die bob;
 void setup()  
 {
-  size(520, 288); 
+  size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight)); 
   noLoop();
   textAlign(CENTER, BOTTOM);
-  rows=floor(height*0.8/100);
-  cols=floor(width/100);
+  rows=(int)(1+20*Math.random());
+  cols=(int)(1+20*Math.random());
 }
 int total=0;
 void draw()  
 {
   background(0,0,0);
+  rows=(int)(1+20*Math.random());
+  cols=(int)(1+20*Math.random());
   for(int i = 0; i<cols; i++){
     for(int j = 0; j<rows; j++){
       if(floor(0.4*(0.8*height/rows))<=floor(0.4*(width/cols))){
