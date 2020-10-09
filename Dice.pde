@@ -17,8 +17,8 @@ void draw()
   cols=(int)(1+20*Math.random());
   for(int i = 0; i<cols; i++){
     for(int j = 0; j<rows; j++){
-      if(floor(0.4*(0.8*height/rows))<=floor(0.4*(width/cols))){
-        bob=new Die((i+1)*width/(cols+1), floor(((j+1)*height/(rows+1))*(0.8)), floor((0.4*((0.8*height)/rows))), 0);
+      if(floor(0.4*(0.9height/rows))<=floor(0.4*(width/cols))){
+        bob=new Die((i+1)*width/(cols+1), floor(((j+1)*height/(rows+1))*(0.8)), floor((0.4*((0.9*height)/rows))), 0);
       } else{
         bob=new Die((i+1)*width/(cols+1), floor(((j+1)*height/(rows+1))*(0.8)), floor((0.4*(width/cols))), 0);
       }
@@ -29,7 +29,7 @@ void draw()
   }
   textSize(height/25);
   fill(255,255,255);
-  text("Total: "+ total+"\n Average: "+(float)total/(rows*cols), width/2, (int)(0.95*height));
+  text("Total: "+ rows*cols+ "dice, adding up to " total+"\n Average: "+(float)total/(rows*cols), width/2, (int)(0.95*height));
 }
 class Die // The Balloon object!
 {
