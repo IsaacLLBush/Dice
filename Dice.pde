@@ -5,8 +5,8 @@ void setup()
   size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight)); 
   noLoop();
   textAlign(CENTER, TOP);
-  rows=width/100;
-  cols=height/100;
+  rows=height/100;
+  cols=width/100;
 }
 int total=0;
 void draw()  
@@ -14,7 +14,7 @@ void draw()
   background(0,0,0);
   for(int i = 0; i<cols; i++){
     for(int j = 0; j<rows; j++){
-      Die bob=new Die((i+1)*width/(rows+1), (int)(((j+1)*height/(cols+1))*(0.8)), width/(3*cols), 0);
+      Die bob=new Die((i+1)*width/(rows+1), (int)(((j+1)*height/(cols+1))*(0.8)), height/(3*cols), 0);
       bob.roll();
       bob.show();
       total+=bob.myNum;
