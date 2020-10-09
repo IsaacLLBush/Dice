@@ -3,7 +3,7 @@
   Die bob;
 void setup()  
 {
-  size(615, 340);
+  size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight)); 
   noLoop();
   textAlign(CENTER, BOTTOM);
   rows=floor(height*0.8/100);
