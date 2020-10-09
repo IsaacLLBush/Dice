@@ -72,7 +72,8 @@ void mousePressed(){
 }
 void keyPressed() {
   if(key==32) {
-        rows=(int)(1+20*Math.random());
-        cols=(int)(1+20*Math.random());
+    rows=(int)(1+20*Math.random());
+    cols=(int)(1+20*Math.random());
+    redraw();
   }
 }
