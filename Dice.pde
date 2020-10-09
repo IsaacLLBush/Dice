@@ -10,8 +10,6 @@ int total=0;
 void draw()  
 {
   background(0,0,0);
-  rows=(int)(1+20*Math.random());
-  cols=(int)(1+20*Math.random());
   for(int i = 0; i<cols; i++){
     for(int j = 0; j<rows; j++){
       if(floor(0.2*(0.9*height/rows))<=floor(0.2*(width/cols))){
@@ -71,4 +69,10 @@ class Die // The Balloon object!
 void mousePressed(){
   total=0;
   redraw();
+}
+void keyPressed() {
+  if(key==32) {
+        rows=(int)(1+20*Math.random());
+        cols=(int)(1+20*Math.random());
+  }
 }
