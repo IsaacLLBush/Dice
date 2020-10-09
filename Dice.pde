@@ -1,11 +1,13 @@
-int rows;
-int cols;
+
+  int rows;
+  int cols;
+  Die bob;
 void setup()  
 {
-  size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight)); 
+  size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight));
   noLoop();
-  textAlign(CENTER, TOP);
-  rows=height/100;
+  textAlign(CENTER, BOTTOM);
+  rows=(int)(height*0.8/100);
   cols=width/100;
 }
 int total=0;
@@ -14,16 +16,19 @@ void draw()
   background(0,0,0);
   for(int i = 0; i<cols; i++){
     for(int j = 0; j<rows; j++){
-      Die bob=new Die((i+1)*width/(cols+1), (int)(((j+1)*height/(rows+1))*(0.8)), height/(3*rows), 0);
+      if((int)(0.4*(0.8*height/rows))<=(int)(0.4*(width/cols))){
+        bob=new Die((i+1)*width/(cols+1), (int)(((j+1)*height/(rows+1))*(0.8)), (int)(0.4*((0.8*height)/rows)), 0);
+      } else{
+        bob=new Die((i+1)*width/(cols+1), (int)(((j+1)*height/(rows+1))*(0.8)), (int)(0.4*(width/cols)), 0);
+      }
       bob.roll();
       bob.show();
       total+=bob.myNum;
     }
   }
-  textSize(width/25);
+  textSize(height/25);
   fill(255,255,255);
-  text("Total: "+ total, width/2, 6.5*height/8);
-  text("Average: "+(float)total/(rows*cols),width/2, 7*height/8);
+  text("Total: "+ total+"\n Average: "+(float)total/(rows*cols), width/2, (int)(0.95*height));
 }
 class Die // The Balloon object!
 {
