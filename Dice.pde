@@ -54,7 +54,7 @@ class Die // The Balloon object!
   void show()
   {
     fill(255, 255, 255);
-    rect(myX, myY, mySize, mySize,mySize);
+    rect(myX, myY, mySize, mySize,mySize/2);
     
     //dot in middle
     fill(0,0,0);
