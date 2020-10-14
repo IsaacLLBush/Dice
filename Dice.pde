@@ -36,7 +36,7 @@ void draw()
   fill(255,255,255);
   textAlign(CENTER, BOTTOM);
   if (Program==-1) {
-    text(rows+"x"+cols+ " coins, with "+total+" heads (" + (float)(100.0*(float)total/(float)(rows*cols)) + "% heads) \nblue is heads, red is tails", width/2, (int)(0.95*height)); //say how many coins and what percentage are heads
+    text(rows+"x"+cols+ ". "+total+" heads (" + (float)(100.0*(float)total/(float)(rows*cols)) + "% heads) \nblue is heads, red is tails", width/2, (int)(0.95*height)); //say how many coins and what percentage are heads
   } else{
     text(rows+"x"+cols+ " dice, adding up to " + total+"\n Average: "+(float)total/(rows*cols), width/2, (int)(0.95*height)); //say how many coins and what percent are green
   }
