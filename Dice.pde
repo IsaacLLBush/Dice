@@ -1,4 +1,4 @@
-int Program = -1; //-1=coins, 1=dice
+int Program = 1; //-1=coins, 1=dice
 
 int rows;
 int cols;
@@ -8,7 +8,7 @@ String side;
 Object bob;
 void setup()  
 {
-  size(1000,1000); //size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight));
+  size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight));
   noLoop();
   rectMode(RADIUS);
   rows=1;
