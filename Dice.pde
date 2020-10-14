@@ -12,20 +12,6 @@ void setup()
   rows=1;
   cols=1;
   total=0;
-int rows;
-int cols;
-int total;
-int availHeight;
-Die bob;
-void setup()  
-{
-  size(1000,1000) //size((int)(0.95*window.innerWidth), (int)(0.95*window.innerHeight));
-  noLoop();
-  textAlign(CENTER, BOTTOM);
-  rectMode(RADIUS);
-  rows=1;
-  cols=1;
-  total=0;
   availHeight=(int)(0.85*height); //how much height the dice can take up
 }
 void draw()  
@@ -109,4 +95,3 @@ void keyPressed() { //grow/shrink the dice array
     redraw();
   }
 }
-
