@@ -105,6 +105,7 @@ class Object //The die/coins object!
 }
 void mousePressed(){
   redraw();
+  System.out.print("hello there!");
 }
 void keyPressed() { //grow/shrink the dice array
   if(keyCode==DOWN){
